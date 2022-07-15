@@ -8,16 +8,17 @@
     <link rel="icon" type="image/x-icon" href=" {{ url_for('static', filename = 'images/logo.png') }}">
 
     {% block header %}
+
     {% endblock header %}
 </head>
 
 <body>
     <nav>
         <div>
-            <h1 class="nav-title"><i>Blog Corner</i></h1>
+            <a class="nav-title" href="/"> <h1><i>Blog Corner</i></h1></a>
             <div class="nav-links">
-                <a href="/">Home</a>
-                <a href="new-blog" class="new-blog-btn">New Blog</a>
+                <a href="/" class="{% if path=="/" %}active-nav-link{% endif %}">Home</a>
+                <a href="/new-blog" class="{% if path=="new-blog" %}active-nav-link{% endif %}">New Blog</a>
             </div>
         </div>
     </nav>
